@@ -1,4 +1,4 @@
-text_id,id,utterance,emotion,context_dependency_classes
+text_id,id,utterance,target_emotion,context_dependency_label
 GoEmo_test_0003,pair_1a,"Kings fan here, good luck to you guys! Will be an interesting game to watch!",ANGER,Emotion-Plausible
 GoEmo_test_0003,pair_1b,"Kings fan here, good luck to you guys! Will be an interesting game to watch!",DISGUST,Emotion-Plausible
 GoEmo_test_0003,pair_1c,"Kings fan here, good luck to you guys! Will be an interesting game to watch!",FEAR,Emotion-Implausible

@@ -82,14 +82,15 @@ PoETIC/
 
 ## Dataset
 
-The dataset consists of human annotations over utterance-emotion pairs derived from the **GoEmotions** benchmark.
+The dataset consists of human annotations over utterance-emotion pairs.
 
 Each record contains:
 
+- Text-id
+- ID
 - Utterance
 - Target emotion
 - Context-dependency label
-- (Additional metadata where applicable)
 
 The dataset is available as
 
@@ -117,10 +118,8 @@ Dataset/poetic.csv
 This repository contains:
 
 - PoETIC benchmark dataset
-- Data preprocessing scripts
+- Inference scripts with Prompt templates
 - Evaluation scripts
-- Prompt templates used for LLM evaluation
-- Experimental results
 - Figures and tables from the paper
 
 ---
@@ -139,18 +138,12 @@ We evaluate several proprietary and open-source language models on the proposed 
 Detailed evaluation tables and figures are available in the `Results/` directory.
 
 ---
-
 ## Code
 
-🚧 **Code release is currently in progress.**
+The repository includes scripts for:
 
-The repository will be updated with:
-
-- inference scripts
-- evaluation pipeline
-- preprocessing utilities
-- prompting templates
-- reproduction scripts
+- **Inference** — running the evaluated models on the PoETIC benchmark. See [`scripts/inference/`](scripts/inference/).
+- **Evaluation** — computing the reported classification metrics and generating evaluation results. See [`scripts/evaluation/`](scripts/evaluation/).
 
 ---
 
@@ -173,7 +166,7 @@ If you use PoETIC in your work, please cite:
 
 ## Paper
 
-- 📄 [Find the paper-PDF at](PoETIC.pdf)
+- 📄 [Find the paper-PDF here](PoETIC.pdf)
 - 📄 ACL Anthology: *Coming Soon*
 
 ---
@@ -181,7 +174,6 @@ If you use PoETIC in your work, please cite:
 ## License
 
 This dataset is released under the **CC BY-NC-SA 4.0** license.
-
 
 ---
 
