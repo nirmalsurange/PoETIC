@@ -6,13 +6,6 @@ from tqdm import tqdm
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from sklearn.metrics import accuracy_score, f1_score
 
-'''
-python zeroshot_context_dependency.py \
-  --model Qwen/Qwen3-32B \
-  --input_csv test.csv \
-  --output_csv predictions.csv \
-  --device cuda
-'''
 
 LABELS = [
     "Self-sufficient",

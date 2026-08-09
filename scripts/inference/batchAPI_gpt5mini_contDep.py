@@ -154,37 +154,6 @@ def make_jsonl_job(global_idx, text, emotion, tagged):
         }
     }
 
-    # ## job url and body was changed to /v1/responses endpoint and 'input'
-    # ## this is after dev and test sets ran fine on /v1/chat/completions with 'messages'
-    # job = {
-    # "custom_id": cid,
-    # "method": "POST",
-    # "url": "/v1/responses",
-    # "body": {
-    #     "model": "gpt-5-mini",
-    #     "input": [
-    #         {
-    #             "role": "system",
-    #             "content": (
-    #                 "You are an expert NLP evaluator.\n"
-    #                 "You must output a JSON object with exactly one key: 'label'.\n"
-    #                 "The value MUST be exactly one of these single codes:\n"
-    #                 "A = Self-Sufficient\n"
-    #                 "B = Context-Dependent\n"
-    #                 "C = Emotion-Impossible\n"
-    #                 "No other output is allowed."
-    #             )
-    #         },
-    #         {
-    #             "role": "user",
-    #             "content": prompt
-    #         }
-    #     ],
-    #     "response_format": {"type": "json_object"},
-    #     "max_output_tokens": 1500
-    # }
-    # }
-    
     return job
 
 
@@ -719,18 +688,6 @@ def main(input_csv, jsonl_path, jsonl_base_name, output_csv, max_tasks_per_jsonl
     jsonl_files, total_items = create_jsonl_chunks(input_csv, jsonl_path, jsonl_base_name, max_tasks_per_file=max_tasks_per_jsonl)
     timed_print(f"Created {len(jsonl_files)} JSONL files for {total_items} total tasks.")
 
-    # # # f1 = os.path.join(jsonl_path, "train_sample.jsonl")
-    # # f1 = os.path.join(jsonl_path, f"{jsonl_base_name}_{0:05d}.jsonl")
-    # f1 = os.path.join(jsonl_path, f"{jsonl_base_name}_{2:05d}.jsonl")
-    # # print("Processing jsonl file:", f1)
-    # # exit()
-
-    # jsonl_files = [os.path.join(jsonl_path, f"{jsonl_base_name}_{n:05d}.jsonl") for n in range(15, 20)]  # for 3rd batch of size 5k
-    # jsonl_files = [os.path.join(jsonl_path, f"{jsonl_base_name}_{n:05d}.jsonl") for n in range(17, 18)]  # for 3rd batch of size 5k
-    # jsonl_files = [os.path.join(jsonl_path, f"{jsonl_base_name}_{n:05d}.jsonl") for n in range(150, 155)]  # for 30th batch of size 5k
-    # jsonl_files = [os.path.join(jsonl_path, f"{jsonl_base_name}_{n:05d}.jsonl") for n in range(151, 152)]  # for 30th batch of size 5k
-    # jsonl_files = [os.path.join(jsonl_path, f"{jsonl_base_name}_{n:05d}.jsonl") for n in range(200, 205)]  # for 40th batch of size 5k
-    # jsonl_files = [os.path.join(jsonl_path, f"{jsonl_base_name}_{n:05d}.jsonl") for n in range(200, 201)]  # for 40th batch of size 5k
     print("jsonl_files to process:", jsonl_files)   
     
     # 2. Process each jsonl file: submit, wait, download & parse with retries

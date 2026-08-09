@@ -10,37 +10,7 @@ from google.genai import types
 import logging
 
 
-# # =========================
-# # PROMPT
-# # =========================
-# PROMPT = """You are an expert NLP evaluator.
 
-# Task:
-# Determine whether the following sentence requires prior context to express the given emotion.
-
-# Sentence:
-# "{sentence}"
-
-# Target Emotion:
-# "{emotion}"
-
-# Classification labels:
-# - Self-sufficient: The emotion is clearly expressed without needing additional context.
-# - Context-dependent: The emotion is ambiguous or weak, and typically needs outside context.
-# - Emotion-Impossible: Even with added context, this sentence cannot plausibly express the target emotion.
-
-# Instructions:
-# - Output EXACTLY ONE label.
-# - Do NOT explain your choice.
-# - Do NOT output anything else.
-
-# Allowed labels:
-# Self-sufficient
-# Context-dependent
-# Emotion-Impossible
-# """
-# =========================
-# PROMPT-2
 # =========================
 PROMPT = """
     You are an expert NLP evaluator. You must classify how dependent the text is on surrounding context to express the given emotion.
@@ -326,23 +296,5 @@ if __name__ == "__main__":
         format='%(asctime)s - %(levelname)s - %(message)s'
     )
     logger = logging.getLogger(__name__)
-
-    # with open("/home/nirmal/code/emotion_llm/goEmo/gemini/train_batches/batch_outputs/batch_0087_output.jsonl", "r", encoding="utf-8") as f:  #dev_batches/batch_outputs/batch_0029_output.jsonl
-    #     for line in f:
-    #         obj = json.loads(line)
-    #         cid = obj["key"].replace("req-", "")
-    #         if 'candidates' not in obj["response"]:
-    #             print(f"Missing candidates for cid: {cid}")
-    #             print(obj)
-    #             print("----- ------------")
-    #             continue
-    #         elif 'content' not in obj["response"]["candidates"][0]:
-    #             print(f"Missing content for cid: {cid}")
-    #             print(obj)
-    #             print("----- ------------")
-    #             continue
-    #         # text = obj["response"]["candidates"][0]["content"]["parts"][0]["text"]
-    #         # predictions[cid] = normalize_label(text)
-    # exit()
 
     main(args)

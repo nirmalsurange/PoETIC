@@ -6,10 +6,6 @@ from tqdm import tqdm
 import time
 from groq import RateLimitError
 
-'''
-python groqLlama_contDependency.py --input_csv ./full_sets_goEmo/gpt5mini_contDep_test.cleaned.csv --output_csv ./goEmo/groqLlama/t
-estl_contDep.csv
-'''
 
 # Groq GoEmo API key setup
 GROQ_API_KEY = 'Your_API_KEY'  # Sir's API key with higher rate limits
