@@ -47,15 +47,17 @@ Traditional datasets assign only a single emotion label, whereas PoETIC explicit
 
 ---
 
-## Context-Dependency Labels
 
-Each **(Utterance, Emotion)** pair is annotated using one of three labels.
+## Benchmark Statistics
 
-| Label | Meaning |
-|--------|---------|
-| **Emotion-Obvious (EO)** | The emotion is clearly expressed without additional context. |
-| **Emotion-Plausible (EP)** | The emotion can be expressed if an appropriate context is imagined. |
-| **Emotion-Implausible (EI)** | The utterance cannot plausibly express the emotion under any reasonable context. |
+| Property | Value |
+|----------|------:|
+| Source Dataset | GoEmotions Test Set |
+| Selected Sentences | 1,000 |
+| Emotion Categories | 7 |
+| Annotated Pairs | 7,000 |
+| Annotation Labels | EO / EP / EI |
+| Inter-Annotator Agreement | Krippendorff's α = 0.62 |
 
 
 ---
@@ -101,24 +103,26 @@ Dataset/poetic.csv
 
 ---
 
-## Benchmark Statistics
+## Context-Dependency Labels
 
-| Property | Value |
-|----------|------:|
-| Source Dataset | GoEmotions Test Set |
-| Selected Sentences | 1,000 |
-| Emotion Categories | 7 |
-| Annotated Pairs | 7,000 |
-| Annotation Labels | EO / EP / EI |
-| Inter-Annotator Agreement | Krippendorff's α = 0.62 |
+Each **(Utterance, Emotion)** pair is annotated using one of three labels.
+
+| Label | Meaning |
+|--------|---------|
+| **Emotion-Obvious (EO)** | The emotion is clearly expressed without additional context. |
+| **Emotion-Plausible (EP)** | The emotion can be expressed if an appropriate context is imagined. |
+| **Emotion-Implausible (EI)** | The utterance cannot plausibly express the emotion under any reasonable context. |
+
 
 ---
+
 ## Code
 
 The repository includes scripts for:
 
 - **Inference** — running the evaluated models on the PoETIC benchmark. See [`scripts/inference/`](scripts/inference/).
 - **Evaluation** — computing the reported classification metrics and generating evaluation results. See [`scripts/evaluation/`](scripts/evaluation/).
+
 
 ---
 
