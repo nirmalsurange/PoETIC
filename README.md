@@ -57,6 +57,7 @@ Each **(Utterance, Emotion)** pair is annotated using one of three labels.
 | **Emotion-Plausible (EP)** | The emotion can be expressed if an appropriate context is imagined. |
 | **Emotion-Implausible (EI)** | The utterance cannot plausibly express the emotion under any reasonable context. |
 
+
 ---
 
 ## Repository Structure
@@ -112,15 +113,12 @@ Dataset/poetic.csv
 | Inter-Annotator Agreement | Krippendorff's α = 0.62 |
 
 ---
+## Code
 
-## Repository Contents
+The repository includes scripts for:
 
-This repository contains:
-
-- PoETIC benchmark dataset
-- Inference scripts with Prompt templates
-- Evaluation scripts
-- Figures and tables from the paper
+- **Inference** — running the evaluated models on the PoETIC benchmark. See [`scripts/inference/`](scripts/inference/).
+- **Evaluation** — computing the reported classification metrics and generating evaluation results. See [`scripts/evaluation/`](scripts/evaluation/).
 
 ---
 
@@ -136,14 +134,6 @@ We evaluate several proprietary and open-source language models on the proposed 
 - RoBERTa baseline
 
 Detailed evaluation tables and figures are available in the `Results/` directory.
-
----
-## Code
-
-The repository includes scripts for:
-
-- **Inference** — running the evaluated models on the PoETIC benchmark. See [`scripts/inference/`](scripts/inference/).
-- **Evaluation** — computing the reported classification metrics and generating evaluation results. See [`scripts/evaluation/`](scripts/evaluation/).
 
 ---
 
@@ -178,12 +168,6 @@ This dataset is released under the **CC BY-NC-SA 4.0** license.
 ---
 
 ## Contact
-
-**Nirmal Surange**
-
-Language Technologies Research Center (LTRC)
-
-IIIT Hyderabad
 
 For questions, suggestions, or collaborations, please open an issue in this repository or contact the author directly.
 
